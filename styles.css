@@ -1,36 +1,92 @@
 * {
 	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 html,
 body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
 	font-family: 'American Typewriter';
 	background-color: grey;
-}
-
-img {
-	height: auto;
-}
-
-h3 {
-	font-weight: 500;
-}
-
-ul {
-	list-style: none;
-}
-
-.fas {
 	color: white;
-	border: solid red 1px;
+
+}
+
+#logo {
+	grid-column-start: 1;
+	grid-column-end: 1;
+	grid-row-start: 1;
+	grid-row-end: 1;
+}
+
+.house {
+	display: flex;
+	justify-content: left;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+#light,
+#teeth,
+#bro {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	height: 100%;
+	width: 100%;
+
+}
+
+.main-nav {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+
+.energy {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 3;
+
+}
+
+.bros {
+	grid-column-start: 2;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 1;
+}
+
+.smile {
+	grid-column-start: 2;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 2;
 }
 
 
 
+.hamburger {
+	grid-column-start: 2;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 1;
+	justify-self: end;
+	justify-content: space-evenly;
+	margin: 25px;
 
-.container {
-	display: inline-block;
-	cursor: pointer;
 }
 
 .bar1,
@@ -38,11 +94,39 @@ ul {
 .bar3 {
 	width: 35px;
 	height: 5px;
-	background-color: white;
+	background-color: whitesmoke;
 	margin: 6px 0;
 	transition: 0.4s;
-	position: relative;
+
 }
+
+h3 {
+	font-weight: 600;
+}
+
+ul {
+	list-style: none;
+	margin-top: 145px;
+	margin-left: 25px;
+}
+
+.fas {
+	color: white;
+
+}
+
+.arrow {
+	display: inline-block;
+	text-align: center;
+	width: 125px;
+
+}
+
+
+
+
+
+
 
 /* .change .bar1 {
 	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
@@ -57,10 +141,3 @@ ul {
 	-webkit-transform: rotate(45deg) translate(-8px, -8px);
 	transform: rotate(45deg) translate(-8px, -8px);
 } */
-
-header {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-
-}
