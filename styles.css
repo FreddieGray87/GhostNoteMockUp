@@ -1,7 +1,7 @@
 * {
 	box-sizing: border-box;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
 
 html,
@@ -13,7 +13,16 @@ body {
 	font-family: 'American Typewriter';
 	background-color: grey;
 	color: white;
+}
 
+.wrapper {
+	display: grid;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: "energy bros" "energy smile";
 }
 
 #logo {
@@ -24,7 +33,7 @@ body {
 }
 
 .house {
-	display: flex;
+	display: grid;
 	justify-content: left;
 	margin-top: 20px;
 	margin-left: 20px;
@@ -36,15 +45,6 @@ body {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-
-}
-
-.wrapper {
-	display: grid;
-	grid-template-columns: 50% 50%;
-	height: 100%;
-	width: 100%;
-
 }
 
 .main-nav {
@@ -55,28 +55,27 @@ body {
 }
 
 .energy {
-	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 1;
-	grid-row-end: 3;
-
+	grid-column: 1 / 2;
+	grid-row: 1 / 3;
+	justify-self: stretch;
+	grid-area: energy;
 }
 
 .bros {
-	grid-column-start: 2;
-	grid-column-end: 2;
-	grid-row-start: 2;
-	grid-row-end: 1;
+	grid-column: 2 / 2;
+	grid-row: 2 / 1;
+	grid-area: bros;
 }
 
 .smile {
-	grid-column-start: 2;
-	grid-column-end: 2;
-	grid-row-start: 2;
-	grid-row-end: 2;
+	grid-column: 2 / 2;
+	grid-row: 2 / 2;
+	grid-area: smile;
 }
 
-
+.trap {
+	clip-path: polygon(78% 0, 100% 49%, 76% 100%, 28% 100%, 0 50%, 21% 0);
+}
 
 .hamburger {
 	grid-column-start: 2;
@@ -84,9 +83,8 @@ body {
 	grid-row-start: 1;
 	grid-row-end: 1;
 	justify-self: end;
-	justify-content: space-evenly;
 	margin: 25px;
-
+	grid-area: bros;
 }
 
 .bar1,
@@ -94,10 +92,19 @@ body {
 .bar3 {
 	width: 35px;
 	height: 5px;
+	background-color: black;
+	border: 5px solid black;
+	transition: 0.4s;
+}
+
+.bar4,
+.bar5,
+.bar6 {
+	width: 35px;
+	height: 5px;
 	background-color: whitesmoke;
 	margin: 6px 0;
 	transition: 0.4s;
-
 }
 
 h3 {
@@ -106,38 +113,37 @@ h3 {
 
 ul {
 	list-style: none;
+	padding: 0;
 	margin-top: 145px;
 	margin-left: 25px;
 }
 
+li {
+	list-style: none;
+}
+
 .fas {
 	color: white;
-
+	padding: 0;
 }
 
 .arrow {
 	display: inline-block;
 	text-align: center;
 	width: 125px;
-
 }
 
-
-
-
-
-
-
-/* .change .bar1 {
-	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
-	transform: rotate(-45deg) translate(-9px, 6px);
+@media (max-width: 800px) {
+	.wrapper {
+		display: grid;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: "energy" "bros" "smile";
+	}
+	.hamburger {
+		grid-area: energy;
+	}
 }
-
-.change .bar2 {
-	opacity: 0;
-}
-
-.change .bar3 {
-	-webkit-transform: rotate(45deg) translate(-8px, -8px);
-	transform: rotate(45deg) translate(-8px, -8px);
-} */
