@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="/script.js"></script>
     <script src="https://kit.fontawesome.com/ea7b178d0f.js"></script>
+    <script src="/script.js"></script>
     <title>House</title>
 </head>
-
-
+<!-- Main Wrapper -->
 <div class="wrapper">
     <div class="energy">
     <img src="/images/Half Screen Vertical.png" alt="" id="light">
@@ -23,6 +21,7 @@
     <img src="/images/Quarter Screen Bottom.png" alt=""id="teeth">
 </div>
 
+<!-- hexagon hamburger menu icon start -->
 <div class="hamburger">
     <div class="trap">
         <div class="bar1"></div>
@@ -35,24 +34,52 @@
         <div class="bar6"></div>
         </div>
         </div>
-    
+    <!-- hexagon menu end -->
+
+    <!-- Drop down menu start -->
 <nav class="main-nav">
         <ul>
             <h3>[ Curate Posts ]</h3>
-            <div class="arrow">
-            <i class="fas fa-chevron-down"></i></div>
+            <div class="arrow" onclick="toggle()">
+            <i class="fas fa-chevron-down" class="arrow"></i></div>
+        <div id="list">
+            <h6>.</h6>
+            <h6>.</h6>
+            <h6>.</h6>
+            <h6>.</h6>
             <div class="list">
             <li><i class="fas fa-camera"></i>  Look.in</li></div>
+            <h6>.</h6>
+            <h6>.</h6>
+            <h6>.</h6>
+            <h6>.</h6>
             <div class="list">
             <li><i class="fas fa-volume-up"></i>  Listen.In</li></div>
+            <h6>.</h6>
+            <h6>.</h6>
+            <h6>.</h6>
+            <h6>.</h6>
             <div class="list">
             <li><i class="fas fa-quote-left"></i>  Dig.In</li></div>
+            <h6>.</h6>
+            <h6>.</h6>
+            <h6>.</h6>
+            <h6>.</h6>
             <div class="list">
             <li><i class="fas fa-th-large"></i>  See.All</li></div>
+            <h6>.</h6>
+            <h6>.</h6>
+            <h6>.</h6>
+            <h6>.</h6>
             <div class="list">
             <li><i class="fas fa-th-large"></i>  My.Feed</li> </div>
+            </div>
         </ul>
     </nav> 
+    <!-- Drop down menu end -->
+    
+    <!-- House Logo -->
     <div id="logo"> <div class="house"><img src="/images/House Logo.png" alt=""></div></div>
     </div>
+    <!-- End of Main Wrapper -->
         </html>

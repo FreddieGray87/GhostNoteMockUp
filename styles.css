@@ -4,6 +4,7 @@
 	padding: 0;
 }
 
+/* base layouts */
 html,
 body {
 	width: 100%;
@@ -15,6 +16,7 @@ body {
 	color: white;
 }
 
+/* Grid layouts */
 .wrapper {
 	display: grid;
 	width: 100%;
@@ -22,7 +24,7 @@ body {
 	margin: 0;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
-	grid-template-areas: "energy bros" "energy smile";
+	grid-template-areas: "energy bros""energy smile";
 }
 
 #logo {
@@ -73,9 +75,13 @@ body {
 	grid-area: smile;
 }
 
+/* hexagon element */
 .trap {
 	clip-path: polygon(78% 0, 100% 49%, 76% 100%, 28% 100%, 0 50%, 21% 0);
+	position: relative;
 }
+
+
 
 .hamburger {
 	grid-column-start: 2;
@@ -84,27 +90,46 @@ body {
 	grid-row-end: 1;
 	justify-self: end;
 	margin: 25px;
-	grid-area: bros;
+
 }
 
 .bar1,
 .bar2,
 .bar3 {
-	width: 35px;
-	height: 5px;
+	width: 55px;
+	height: 15px;
 	background-color: black;
 	border: 5px solid black;
-	transition: 0.4s;
+
 }
 
 .bar4,
 .bar5,
 .bar6 {
-	width: 35px;
-	height: 5px;
-	background-color: whitesmoke;
-	margin: 6px 0;
-	transition: 0.4s;
+	position: relative;
+	padding-left: 1.25em;
+}
+
+.bar4,
+.bar5,
+.bar6:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 10px;
+	width: 20px;
+	height: 2px;
+	background: white;
+	box-shadow:
+		0 0.25em 0 0 white,
+		0 0.5em 0 0 white;
+}
+
+.ham {
+	top: 42px;
+	right: 42px;
+	position: absolute;
 }
 
 h3 {
@@ -131,7 +156,22 @@ li {
 	display: inline-block;
 	text-align: center;
 	width: 125px;
+	cursor: pointer;
 }
+
+.arrow:hover {
+	cursor: pointer;
+}
+
+.fa-chevron-down:hover {
+	color: black;
+}
+
+#list {
+	display: none;
+}
+
+/* media queries with css grid */
 
 @media (max-width: 800px) {
 	.wrapper {
@@ -141,8 +181,9 @@ li {
 		margin: 0;
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr;
-		grid-template-areas: "energy" "bros" "smile";
+		grid-template-areas: "energy""bros""smile";
 	}
+
 	.hamburger {
 		grid-area: energy;
 	}
